@@ -21,6 +21,8 @@ function mappingResultListPage(listPage) {
     const result = {
       id: post.id,
       title: propertiesData[process.env.NOTION_POSTS_ID]?.title[0]?.plain_text,
+      featuredImage:
+        propertiesData[process.env.NOTION_FEATURED_IMAGE_ID]?.files[0]?.file,
       description:
         propertiesData[process.env.NOTION_DESCRIPTION_ID]?.rich_text[0]
           ?.plain_text,
@@ -78,7 +80,6 @@ async function getPage() {
     method: 'POST',
     url: `${NOTION_API_DATABASES}/query`,
     headers: HEADERS,
-    data: { page_size: 6 },
   };
 
   const response = await axios.request(options);

@@ -37,6 +37,7 @@ export const getPublished = async (req, res) => {
     const limit = parseInt(req.query.limit);
     const startIndex = (page - 1) * limit;
     const endIndex = page * limit;
+    const totalItem = posts?.length;
 
     const results = {};
     if (endIndex < posts?.length) {
@@ -53,8 +54,14 @@ export const getPublished = async (req, res) => {
       };
     }
 
-    results.results = posts.slice(startIndex, endIndex);
+    results.totalItems = totalItem;
 
+    if (!page || !limit) {
+      results.results = posts;
+      return res.status(200).send(successResponse(results));
+    }
+
+    results.results = posts.slice(startIndex, endIndex);
     res.status(200).send(successResponse(results));
   } catch (error) {
     res.status(500).send(errorResponse(500, error.message));
