@@ -78,7 +78,7 @@ async function getPage() {
     method: 'POST',
     url: `${NOTION_API_DATABASES}/query`,
     headers: HEADERS,
-    data: { page_size: 100 },
+    data: { page_size: 6 },
   };
 
   const response = await axios.request(options);
@@ -103,7 +103,6 @@ async function getBlockChildren(postId) {
 
 // GET Post Filtered
 async function getPageFiltered(filters) {
-  console.log(filters);
   const options = {
     method: 'POST',
     url: `${NOTION_API_DATABASES}/query`,
