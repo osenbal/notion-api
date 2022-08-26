@@ -9,8 +9,6 @@ This api is made to make it easier to retrieve data from the notion database tab
 - [Tools Usage](#tools-usage)
 - [Installation](#installation)
 - [API Endpoint](#api-endpoint)
-- [Usage](#usage)
-- [Dislaimer](#dislaimer)
 
 <br />
 
@@ -18,8 +16,6 @@ This api is made to make it easier to retrieve data from the notion database tab
 
 [![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)](https://www.expressjs.com)
 [![Express.js](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)](https://www.notion.io)
-
-<br />
 
 ## dependencies
 
@@ -54,10 +50,30 @@ npm start
 
 # API Endpoint
 
+**Get All Post**
+
+```
+/api/v1/posts/all-posts
+```
+
+**Get Published Post**
+
+```
+/api/v1/posts/published
+```
+
+**Get Post by Category**<br/>
+\*require params
+
+```
+/api/v1/posts/category/:categoryName
+```
+
+**Get Detail Post by Id**<br />
+\*require params
+
+```
+/api/v1/posts/detail/:id
+```
+
 <br />
-
-# Usage
-
-<br />
-
-# Disclaimer
