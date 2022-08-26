@@ -7,7 +7,6 @@ This api is made to make it easier to retrieve data from the notion database tab
 - [Tools Usage](#tools-usage)
 - [Installation](#installation)
 - [API Endpoint](#api-endpoint)
-- [Developing and Compiling](#developing-and-compiling)
 - [Usage](#usage)
 - [Dislaimer](#dislaimer)
 
@@ -21,8 +20,6 @@ npm install
 ```
 
 # API Endpoint
-
-# Developing and Compiling
 
 # Usage
 
