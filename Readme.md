@@ -12,7 +12,8 @@ This api is made to make it easier to retrieve data from the notion database tab
 - [Dislaimer](#dislaimer)
 
 # Tools Usage 
-[![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)](https://www.expressjs.com)
+[![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)](https://www.expressjs.com)
+[![Express.js](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)](https://www.notion.io)
 
 # Installation
 
