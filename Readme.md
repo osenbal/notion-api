@@ -1,5 +1,5 @@
 <h1 align="center"> NOTION API - Blogs [ Only Read ] </h1>
-
+This api is made to make it easier to retrieve data from the notion database table
 
 # Table of Contents
 
