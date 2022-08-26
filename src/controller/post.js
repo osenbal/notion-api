@@ -1,6 +1,7 @@
 import { getPage, getBlockChildren, getPageFiltered } from '../services/notion';
 import { successResponse, errorResponse } from '../utils/utils';
 
+// get All Post
 export const getAllPosts = async (req, res) => {
   try {
     const promises = await getPage();
@@ -11,6 +12,7 @@ export const getAllPosts = async (req, res) => {
   }
 };
 
+// get Post by Id
 export const getDetailPost = async (req, res) => {
   try {
     const post = await getBlockChildren(req.params.id);
@@ -22,6 +24,7 @@ export const getDetailPost = async (req, res) => {
   }
 };
 
+// get published Post
 export const getPublished = async (req, res) => {
   try {
     const filter = {
@@ -68,13 +71,24 @@ export const getPublished = async (req, res) => {
   }
 };
 
+// get filtered Post by category
 export const getFilteredCategory = async (req, res) => {
   try {
     const filter = {
-      property: 'category',
-      multi_select: {
-        contains: req.params.name,
-      },
+      and: [
+        {
+          property: 'category',
+          multi_select: {
+            contains: req.params.name,
+          },
+        },
+        {
+          property: 'archived',
+          checkbox: {
+            equals: false,
+          },
+        },
+      ],
     };
     const posts = await getPageFiltered(filter);
     res.status(200).send(successResponse(posts));

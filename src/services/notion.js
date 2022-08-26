@@ -22,14 +22,16 @@ function mappingResultListPage(listPage) {
       id: post.id,
       title: propertiesData[process.env.NOTION_POSTS_ID]?.title[0]?.plain_text,
       featuredImage:
-        propertiesData[process.env.NOTION_FEATURED_IMAGE_ID]?.files[0]?.file,
+        propertiesData[process.env.NOTION_FEATURED_IMAGE_ID]?.files[0]?.file ||
+        null,
       description:
         propertiesData[process.env.NOTION_DESCRIPTION_ID]?.rich_text[0]
-          ?.plain_text,
+          ?.plain_text || null,
       isArchived: propertiesData[process.env.NOTION_ARCHIVED_ID]?.checkbox,
-      categories: propertiesData[process.env.NOTION_CATEGORY_ID]?.multi_select,
-      tags: propertiesData[process.env.NOTION_TAGS_ID]?.multi_select,
-      createdBy: propertiesData[process.env.NOTION_CREATED_BY_ID]?.people,
+      categories:
+        propertiesData[process.env.NOTION_CATEGORY_ID]?.multi_select || [],
+      tags: propertiesData[process.env.NOTION_TAGS_ID]?.multi_select || [],
+      createdBy: propertiesData[process.env.NOTION_CREATED_BY_ID]?.people || [],
       createdAt: propertiesData[process.env.NOTION_CREATED_AT_ID]?.created_time,
       deletedAt: propertiesData[process.env.NOTION_DELETE_AT_ID]?.date,
     };
