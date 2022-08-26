@@ -16,6 +16,9 @@ This api is made to make it easier to retrieve data from the notion database tab
 [![Express.js](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)](https://www.notion.io)
 
 # Installation
+```
+npm install
+```
 
 # API Endpoint
 
