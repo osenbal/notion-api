@@ -8,6 +8,10 @@ const app = express();
 
 app.use(cors());
 
+app.get('/', (req, res) => {
+  res.send('Welcome to Notion API Blogs');
+});
+
 app.use('/api/v1', router);
 
 app.listen(port, () => {
