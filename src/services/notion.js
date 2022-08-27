@@ -90,6 +90,35 @@ async function getPage() {
   return result;
 }
 
+function mappingBlockChildren(obj = {}) {
+  switch (obj?.type) {
+    case 'paragraph':
+      return obj.paragraph?.rich_text
+        .map((text) => {
+          const annotationStyle = text?.annotations;
+
+          return `<p style="${
+            annotationStyle?.bold
+              ? 'font-weight: bold;'
+              : annotationStyle?.italic
+              ? 'font-style: italic;'
+              : annotationStyle?.underline
+              ? 'text-decoration: underline;'
+              : annotationStyle?.strikethrough
+              ? 'text-decoration: line-through;'
+              : annotationStyle?.color === 'default'
+              ? 'color: #37352f'
+              : '#000000'
+          }">${text?.text?.content}</p>`;
+        })
+        .join('<br />');
+    case 'image':
+      return `<img src="${obj.image?.external?.url}" alt="external" />`;
+    default:
+      return obj;
+  }
+}
+
 // GET Detail Post
 async function getBlockChildren(postId) {
   const options = {

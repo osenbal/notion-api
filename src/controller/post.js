@@ -16,7 +16,6 @@ export const getAllPosts = async (req, res) => {
 export const getDetailPost = async (req, res) => {
   try {
     const post = await getBlockChildren(req.params.id);
-    console.log(post);
     res.status(200).send(successResponse(post));
   } catch (error) {
     console.log(error);

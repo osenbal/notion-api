@@ -27,13 +27,17 @@ This api is made to make it easier to retrieve data from the notion database tab
 
 # Installation
 
+Create Database in your notion
+**looks like this**
+![Notion database table](notion/database-preview.png)
+
 Install package
 
 ```
 npm install
 ```
 
-Create file .env
+Create file .env (see .env.example for example variable)
 
 ```
 Add **SECRET KEY** and **DATABASE ID** your notion
@@ -77,3 +81,21 @@ npm start
 ```
 
 <br />
+
+**Get All Category**<br />
+
+```
+/api/v1/properties/categories
+```
+
+**Get All Tags**<br />
+
+```
+/api/v1/properties/tags
+```
+
+<br />
+
+### API Reference
+
+https://www.getpostman.com/collections/61300315411c017769d4
